@@ -31,5 +31,5 @@ The scikit-learn LogisticRegression model with an accuracy of **0.9162** perform
 AutoML is more hands-off and more comprehensive whereas Hyperdrive is more customizable as one may provide a custom training script.
 
 ## Future work
-* Providing balanced data with a number of positive outcomes closer to the number of negative outcomes may also improve the autoML model.
+* Providing balanced data with a number of positive outcomes closer to the number of negative outcomes may improve the autoML model.
 * More training data may also improve the experiments.
