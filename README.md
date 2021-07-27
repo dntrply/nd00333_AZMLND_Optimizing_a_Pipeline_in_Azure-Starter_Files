@@ -12,7 +12,7 @@ if a customer will subscribe to a Term Deposit offer**
 **The best performing model is the scikit-learn LogisticRegression model with an accuracy of 0.9180**
 
 ## Scikit-learn Pipeline
-The pipeline architecture uses AzureML HyperDrive. HyperDrive allows the user to specify the training script and script environment, the input data to the training model, the metric to improve (**accuracy**) and the hyperparameters for the model(**--C** - inverse of regularization strength and **--max_iter** - maximum number of iterations). Parameter Sampling algorithms (eg. **random parameter sampling** and early stopping  (eg. **bandit policy**) algorithms may also be specified. HyperDrive then repeatedly executes the training script with a combination of hyperdrive parameters with the intent to maximize the best metric. Metrics can readily be retrieved from the best run and the model readily persisted for later deployment or retraining. The training algorithm chosen is the **scikit-learn LogisticRegression** classification algorithm. It is suited for this dataset where we classify whether the customer will or will not subscribe to a term deposit.
+The pipeline architecture uses AzureML HyperDrive. HyperDrive allows the user to specify the training script and script environment, the input data to the training model, the metric to improve (**accuracy**) and the hyperparameters for the model (**--C** - inverse of regularization strength and **--max_iter** - maximum number of iterations). Parameter Sampling algorithms (eg. **random parameter sampling** and early stopping  (eg. **bandit policy**) algorithms may also be specified. HyperDrive then repeatedly executes the training script with a combination of hyperdrive parameters with the intent to maximize the best metric. Metrics can readily be retrieved from the best run and the model readily persisted for later deployment or retraining. The training algorithm chosen is the **scikit-learn LogisticRegression** classification algorithm. It is suited for this dataset where we classify whether the customer will or will not subscribe to a term deposit.
 
 **Benefits of RandomParameterSampling (chosen parameter sampler)**
 RandomParameterSampling allows for a range of combinations of parameter values to be tested. The benefit is that the user is not limited to guessing and tracking a handful of combination of values. Rather, the system attempts multiple combinations and keeps track of the parameters and the results.
@@ -31,6 +31,5 @@ The scikit-learn LogisticRegression model with an accuracy of **.9180** performe
 AutoML is more hands-off and more comprehensive whereas Hyperdrive is more customizable as one may provide a custom training script.
 
 ## Future work
-* This project was limited to a 30 minute AutoML run. It is possible that with a longer run, the AutoML accuracy may improve.
 * Providing balanced data with a number of positive outcomes closer to the number of negative outcomes may also improve the autoML model.
-* Finally, more training data may also improve the experiments.
+* More training data may also improve the experiments.
