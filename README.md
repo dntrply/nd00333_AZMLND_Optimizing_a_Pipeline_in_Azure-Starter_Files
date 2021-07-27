@@ -9,7 +9,7 @@ This model is then compared to an Azure AutoML run.
 **This dataset comprises data about a marketing campaign at a bank. The goal is to determine
 if a customer will subscribe to a Term Deposit offer**
 
-**The best performing model is the scikit-learn LogisticRegression model with an accuracy of 0.9180**
+**The best performing model is the scikit-learn LogisticRegression model with an accuracy of 0.9162**
 
 ## Scikit-learn Pipeline
 The pipeline architecture uses AzureML HyperDrive. HyperDrive allows the user to specify the training script and script environment, the input data to the training model, the metric to improve (**accuracy**) and the hyperparameters for the model (**--C** - inverse of regularization strength and **--max_iter** - maximum number of iterations). Parameter Sampling algorithms (eg. **random parameter sampling** and early stopping  (eg. **bandit policy**) algorithms may also be specified. HyperDrive then repeatedly executes the training script with a combination of hyperdrive parameters with the intent to maximize the best metric. Metrics can readily be retrieved from the best run and the model readily persisted for later deployment or retraining. The training algorithm chosen is the **scikit-learn LogisticRegression** classification algorithm. It is suited for this dataset where we classify whether the customer will or will not subscribe to a term deposit.
@@ -26,7 +26,7 @@ is not within the specified slack factor of the most successful run. This allows
 The best AutoML model is VotingEnsemble, comprising of a data transformer and an ensemble of many weighted models. The DataTransformer performs automatic featurization. The highest weighted model is the MaxAbsAcaler, LightGBM classifier model. LighGBM Model has hyperparameters such as min_data_in_leaf
 
 ## Pipeline comparison
-The scikit-learn LogisticRegression model with an accuracy of **.9180** performed better than the best model from AutoML with accuracy **0.9157**. The sklearn LogisticRegression model likely is the better model for the nature of data provided in this dataset. Although AutoML tries a number of algorithms, it was unable to out-perform the scikit-learn LogisticRegression model. 
+The scikit-learn LogisticRegression model with an accuracy of **0.9162** performed better than the best model from AutoML with accuracy **0.9152**. The sklearn LogisticRegression model likely is the better model for the nature of data provided in this dataset. Although AutoML tries a number of algorithms, it was unable to out-perform the scikit-learn LogisticRegression model. 
 
 AutoML is more hands-off and more comprehensive whereas Hyperdrive is more customizable as one may provide a custom training script.
 
