@@ -23,7 +23,7 @@ is not within the specified slack factor of the most successful run. This allows
 
 ## AutoML
 **Best Model**
-The best AutoML model is VotingEnsemble, comprising of a data transformer and an ensemble of many weighted models. The DataTransformer performs automatic featurization. The highest weighted model is the MaxAbsAcaler, LightGBM classifier model. LighGBM Model has hyperparameters such as min_data_in_leaf
+The best AutoML model is VotingEnsemble, comprising of a data transformer and an ensemble of many weighted models. The DataTransformer performs automatic featurization. The highest weighted model is the MaxAbsScaler, LightGBM classifier model. LighGBM Model has hyperparameters such as min_data_in_leaf
 
 ## Pipeline comparison
 The scikit-learn LogisticRegression model with an accuracy of **0.9162** performed better than the best model from AutoML with accuracy **0.9152**. The sklearn LogisticRegression model likely is the better model for the nature of data provided in this dataset. Although AutoML tries a number of algorithms, it was unable to out-perform the scikit-learn LogisticRegression model. 
